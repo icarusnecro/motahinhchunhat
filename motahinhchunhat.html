@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<canvas id = "Canvas" style="border: 1px solid #88111e; height: 600px; width: 1000px;"></canvas><br/>
+<body>
+<script>
+    let x = parseInt(prompt("x"));
+    let y = parseInt(prompt("y"));
+let rectacula = {
+    x : x,
+    y : y,
+    getDiameter : function () {
+        return (this.x + this.y)*2;
+    },
+    getArea : function(){
+        return this.x*this.y;
+    },
+    color : "red"
+};
+function creat() {
+        let c = document.getElementById("Canvas");
+        let ctx = c.getContext("2d");
+        ctx.rect(50, 50, x, y);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        document.getElementById("Canvas").innerHTML = document.write(" chu vi :" +rectacula.getDiameter() +
+                                                                        " dien tich:" +rectacula.getArea());
+
+    }
+creat();
+
+</script>
+</body>
+</html>
